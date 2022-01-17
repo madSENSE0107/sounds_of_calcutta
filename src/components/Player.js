@@ -77,32 +77,29 @@ export default function Player(props) {
   };
 
   return (
-    <div className="m-7 text-xl md:flex md:justify-between md:px-16">
+    <div className="p-7 h-screen text-white md:flex md:justify-evenly md:px-16 bg-cover bg-sky-900 bg-blend-multiply " style={{ backgroundImage: `url('${props.songs[index].imgSrc}')` }}>
       {/* image */}
-      <div className="h-96 grid justify-items-center flex-col mb-12 md:px-16">
-        <h1 className="pt-8 text-base text-center font-medium">
-          Sounds Of Calcutta
-        </h1>
-
-        <img
-          src={props.songs[index].imgSrc}
-          alt="where did it go ?"
-          className="mt-6 rounded-3xl filter drop-shadow-2xl h-60 w-48"
-        />
-        {/* Song Name and Artist */}
-        <div className="flex flex-col justify-center text-center">
-          {" "}
-          <div className="font-light text-3xl mt-5 ml-2">
-            {props.songs[index].songName}
-          </div>
-          <div className="font-thin text-base text-gray-600 ml-2 ">
-            Mirchi Dip
-          </div>
+      <div className="flex flex-col mb-6 md:mr-32 md:justify-center md:items-center md:w-2/5 ">
+        <div className="mt-8 text-center font-extrabold text-4xl md:text-7xl text-white ">
+          Sounds of Calcutta
         </div>
+        <div className="mt-5 text-stone-300 text-center tracking-tighter">Inspired from Sounds of Mumbai. Techstack includes React and TailwindCSS. The audios have been sourced from Radio Mirchi</div>
+
+        {/* Song Name and Artist */}
+
       </div>
 
       {/* audio control */}
-      <div className="border-t shadow-2xl border-gray-800 border-opacity-20 bg-white h-96 -mx-7 p-5 rounded-t-3xl md:rounded-3xl md:h-auto md:w-96 md:-mx-24 md:shadow-xl md:pt-24">
+      <div className="md:w-2/5 flex flex-col justify-center">
+        <div className=" text-center">
+          {" "}
+          <div className="font-semibold  text-2xl mt-5 ml-2">
+            {props.songs[index].songName}
+          </div>
+          <div className="font-thin text-base text-stone-200 ml-2 ">
+            Mirchi Dip
+          </div>
+        </div>
         <div>
           <audio
             ref={audioElement}
@@ -110,12 +107,12 @@ export default function Player(props) {
             onLoadedMetadata={findDuration}
             src={props.songs[index].Src}
           >
-            hello
+            no audio found
           </audio>
         </div>
 
         {/* Time  */}
-        <div className="flex justify-between text-base text-gray-500 px-1">
+        <div className="flex flex-row justify-between text-stone-200 px-2">
           {/* current time */}
           <div>{calculateTime(time)}</div>
           {/* Duration */}
@@ -128,11 +125,11 @@ export default function Player(props) {
           value={value}
           ref={progressBar}
           type="range"
-          className="rounded-lg mt-12 h-1 w-full outline-none progress-bar slider-thumb"
+          className="rounded-lg mt-2 h-1 w-full outline-none progress-bar "
         />
 
         {/* button control */}
-        <div className="flex justify-center p-2 mt-5 mx-20 shadow-xl border-2 rounded-3xl">
+        <div className="flex justify-center  mt-5 mx-20">
           <button onClick={() => check(-1)}>
             <FontAwesomeIcon icon={faStepBackward} className="text-xl" />
           </button>
@@ -140,12 +137,12 @@ export default function Player(props) {
             {!isPlaying ? (
               <FontAwesomeIcon
                 icon={faPlayCircle}
-                className="mx-4 text-6xl text-blue-500 "
+                className="mx-4 text-6xl text-sky-300 "
               />
             ) : (
               <FontAwesomeIcon
                 icon={faPauseCircle}
-                className="mx-4 text-6xl text-blue-500"
+                className="mx-4 text-6xl text-sky-500"
               />
             )}
           </button>
