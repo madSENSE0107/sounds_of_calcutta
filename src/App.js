@@ -11,7 +11,7 @@ function App() {
 
     },
     {
-      "songName": "Barowari_Pujo",
+      "songName": "Barowari Pujo",
       "Src": "./sounds/Barowari_Pujo.mp3",
       "imgSrc": "./images/Barowari_Pujo.jpg"
     },
@@ -48,13 +48,13 @@ function App() {
     <div >
       <Player songs={songs} />
       <footer className=" md:px-12 md:flex md:justify-start md:flex-col  m-3">
-        <p className="mt-8 mb-3 md:mt-0 md:mb-0 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-slate-800">Suggestions !</p>
+        <p className="mt-8 mb-3 md:mt-0 md:mb-0 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-red-500 to-slate-800">Suggestions !</p>
         <div className="mb-8 md:mb-2">
           Suggest me features
           by connecting with me through these socials.
 
         </div>
-        <ul className="mb-4 flex text-sky-600 flex-row">
+        <ul className="mb-4 flex text-red-600 flex-row">
           <li className="mr-3 decoration-1"><a className="" href="https://github.com/madSENSE0107">github</a></li>
           <li className="mr-3  decoration-1"><a className="" href="https://www.linkedin.com/in/saptarsi-chakrabarty/">linkedin</a></li>
           <li className="mr-3  decoration-1"><a className="" href="https://mail.google.com/mail/?view=cm&fs=1&to=saptarsi2000@google.com">Email</a></li>
